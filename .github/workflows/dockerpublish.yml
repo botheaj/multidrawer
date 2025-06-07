@@ -3,7 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-    paths: [ "apps/dumbmp/**" ]
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
