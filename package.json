@@ -1,0 +1,14 @@
+{
+    "name": "basic-multiplayer-game",
+    "version": "1.0.0",
+    "description": "A basic multiplayer JavaScript game with moving blocks and collision.",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "uuid": "^9.0.1",
+      "ws": "^8.14.2"
+    }
+  }
+  

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Multiplayer Blocks</title>
+    <style>
+        body { margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background-color: #f0f0f0; font-family: Arial, sans-serif; text-align: center; }
+        canvas { border: 1px solid black; background-color: #fff; }
+        .controls-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 15px; margin-bottom: 10px; }
+        .control-group { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;}
+        .control-group legend { font-weight: bold; margin-bottom: 5px; }
+        .control-group label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        label { font-size: 1em; }
+        input[type="color"] { width: 50px; height: 30px; border: 1px solid #ccc; padding: 0; cursor: pointer; vertical-align: middle; }
+        #connectionStatus { margin-top: 10px; font-size: 0.9em; min-height: 1.2em; }
+        p { max-width: 600px; }
+        .color-palette { display: flex; gap: 5px; margin-top: 5px; }
+        .color-swatch { width: 20px; height: 20px; border: 1px solid #777; cursor: pointer; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Multidrawer</h1>
+    <p>Love your creation? Take a screenshot!</p>
+    <p>Use <b>Arrow Keys</b> or <b>WASD</b> to move. Press <b>Spacebar</b> to draw.</p>
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="controls-container">
+        <fieldset class="control-group">
+            <legend>Shape</legend>
+            <label><input type="radio" name="playerShape" value="square" checked> Square</label>
+            <label><input type="radio" name="playerShape" value="circle"> Circle</label>
+            <label><input type="radio" name="playerShape" value="triangle"> Triangle</label>
+        </fieldset>
+
+        <fieldset class="control-group">
+            <legend>Size</legend>
+            <label><input type="radio" name="playerSize" value="small"> Small</label>
+            <label><input type="radio" name="playerSize" value="medium" checked> Medium</label>
+            <label><input type="radio" name="playerSize" value="large"> Large</label>
+        </fieldset>
+
+        <fieldset class="control-group">
+            <legend>Color</legend>
+            <label for="playerColor">Custom:</label>
+            <input type="color" id="playerColor" value="#FF0000">
+            <div class="color-palette" id="colorPalette">
+                <div class="color-swatch" style="background-color: red;" data-color="red"></div>
+                <div class="color-swatch" style="background-color: orange;" data-color="orange"></div>
+                <div class="color-swatch" style="background-color: yellow;" data-color="yellow"></div>
+                <div class="color-swatch" style="background-color: green;" data-color="green"></div>
+                <div class="color-swatch" style="background-color: blue;" data-color="blue"></div>
+                <div class="color-swatch" style="background-color: purple;" data-color="purple"></div>
+                <div class="color-swatch" style="background-color: brown;" data-color="brown"></div>
+                <div class="color-swatch" style="background-color: black;" data-color="black"></div>
+                <div class="color-swatch" style="background-color: white;" data-color="white"></div>
+            </div>
+        </fieldset>
+    </div>
+    <div id="connectionStatus">Connecting...</div>
+    <p>To play with others on your Local Area Network (LAN), they should open their browser and go to <code>http://&lt;your-server-ip&gt;:8080</code> where <code>&lt;your-server-ip&gt;</code> is the LAN IP address of the computer running this server.</p>
+
+    <script src="client.js"></script>
+</body>
+</html>
