@@ -5,4 +5,4 @@
 
 
 Alternatively
-`docker run -p 8080:8080 ghcr.io/ajbothe-com/dumbmp:latest`
+`docker run -p 8080:8080 ghcr.io/botheaj/multidrawer:latest`
